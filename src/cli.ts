@@ -91,6 +91,17 @@ program
   });
 
 program
+  .command('buy')
+  .description('Buy REPPO tokens with USDC via Uniswap')
+  .requiredOption('--amount <amount>', 'Amount of REPPO to buy')
+  .option('--slippage <percent>', 'Slippage tolerance in percent', '1')
+  .option('--dry-run', 'Simulate without executing')
+  .action(async (opts) => {
+    const { cmdBuy } = await import('./commands/buy.js');
+    await cmdBuy(opts);
+  });
+
+program
   .command('fee')
   .description('Check current publishing fee')
   .action(async () => {

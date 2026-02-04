@@ -69,3 +69,9 @@ export interface OutputOptions {
   json?: boolean;
   dryRun?: boolean;
 }
+
+export interface SwapResult {
+  txHash: Hash;
+  amountIn: bigint;   // USDC spent
+  amountOut: bigint;   // REPPO received
+}

@@ -28,3 +28,16 @@ export const ERC20_ABI = parseAbi([
   'function balanceOf(address account) view returns (uint256)',
   'function allowance(address owner, address spender) view returns (uint256)',
 ]);
+
+export const USDC_TOKEN: Address = '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913';
+export const UNISWAP_ROUTER: Address = '0x2626664c2603336E57B271c5C0b26F421741e481';
+export const UNISWAP_QUOTER: Address = '0x3d4e44Eb1374240CE5F1B871ab261CD16335B76a';
+export const UNISWAP_POOL_FEE = 3000;
+
+export const SWAP_ROUTER_ABI = parseAbi([
+  'function exactOutputSingle((address tokenIn, address tokenOut, uint24 fee, address recipient, uint256 amountOut, uint256 amountInMaximum, uint160 sqrtPriceLimitX96)) external payable returns (uint256 amountIn)',
+]);
+
+export const QUOTER_ABI = parseAbi([
+  'function quoteExactOutputSingle((address tokenIn, address tokenOut, uint256 amount, uint24 fee, uint160 sqrtPriceLimitX96)) external returns (uint256 amountIn, uint160 sqrtPriceX96After, uint32 initializedTicksCrossed, uint256 gasEstimate)',
+]);
