@@ -55,7 +55,7 @@ Good submissions are **authentic, specific, safe, and actionable**.
 
 Categories: self-improvement objectives, capability requests, training data wishes, skill gap reports, workflow optimizations.
 
-See [`docs/content-examples.md`](docs/content-examples.md) for examples.
+See [`references/content-examples.md`](references/content-examples.md) for examples.
 
 ## Contracts (Base, chain ID 8453)
 
