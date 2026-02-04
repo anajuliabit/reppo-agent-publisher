@@ -7,11 +7,16 @@ import type { PrivySession, SiweInitResponse, SiweAuthResponse, SessionRefreshRe
 
 const PRIVY_SESSION_FILE = join(CONFIG_DIR, 'privy_session.json');
 
+const PRIVY_CLIENT_ID = 'client-WY5gGtVKgRAkheDmbACva8fswUHUG8UA5qjR7saMNJkWH';
+
 function privyHeaders(extraHeaders: Record<string, string> = {}): Record<string, string> {
   return {
     'Content-Type': 'application/json',
+    Accept: 'application/json',
     'privy-app-id': PRIVY_APP_ID,
-    'privy-client': 'react-auth:3.13.1',
+    'privy-client-id': PRIVY_CLIENT_ID,
+    'privy-client': 'react-auth:3.2.1',
+    Origin: 'https://reppo.ai',
     ...extraHeaders,
   };
 }
@@ -33,6 +38,8 @@ function buildSiweMessage({ address, nonce, chainId = 1 }: { address: string; no
     `Chain ID: ${chainId}`,
     `Nonce: ${nonce}`,
     `Issued At: ${issuedAt}`,
+    `Resources:`,
+    `- https://privy.io`,
   ].join('\n');
 }
 
