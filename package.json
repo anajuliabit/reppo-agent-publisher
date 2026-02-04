@@ -13,7 +13,8 @@
     "build": "tsc",
     "dev": "tsx bin/reppo.ts",
     "prepublishOnly": "npm run build",
-    "start": "node dist/bin/reppo.js"
+    "start": "node dist/bin/reppo.js",
+    "test": "vitest run"
   },
   "keywords": [
     "reppo",
@@ -34,7 +35,8 @@
   "devDependencies": {
     "@types/node": "^25.2.0",
     "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
   },
   "type": "module"
 }
