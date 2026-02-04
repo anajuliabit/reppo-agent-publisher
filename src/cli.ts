@@ -11,7 +11,7 @@ const program = new Command();
 program
   .name('reppo')
   .version('0.1.0')
-  .description('Publish AI agent training intentions to Reppo.ai')
+  .description('Publish content to Moltbook and mint pods on Reppo.ai')
   .option('--json', 'Output results as JSON (for programmatic use)')
   .hook('preAction', (thisCommand) => {
     const opts = thisCommand.opts();

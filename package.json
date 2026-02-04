@@ -1,7 +1,7 @@
 {
   "name": "reppo-agent-publisher",
   "version": "0.2.0",
-  "description": "CLI for publishing AI agent training intentions to Reppo.ai's AgentMind subnet",
+  "description": "CLI for AI agents to publish content on Moltbook and mint pods on Reppo.ai",
   "main": "dist/src/cli.js",
   "bin": {
     "reppo": "dist/bin/reppo.js"
