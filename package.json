@@ -1,21 +1,38 @@
 {
   "name": "reppo-agent-publisher",
-  "version": "0.1.0",
-  "description": "Publish AI agent training intentions to Reppo.ai's AgentMind subnet",
-  "main": "publish.ts",
-  "scripts": {
-    "publish": "tsx publish.ts",
-    "login": "tsx publish.ts login",
-    "status": "tsx publish.ts status",
-    "fee": "tsx publish.ts fee"
+  "version": "0.2.0",
+  "description": "CLI for publishing AI agent training intentions to Reppo.ai's AgentMind subnet",
+  "main": "dist/src/cli.js",
+  "bin": {
+    "reppo": "dist/bin/reppo.js"
   },
-  "keywords": ["reppo", "ai-agent", "agentmind", "base", "on-chain", "training"],
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx bin/reppo.ts",
+    "prepublishOnly": "npm run build",
+    "start": "node dist/bin/reppo.js"
+  },
+  "keywords": [
+    "reppo",
+    "ai-agent",
+    "agentmind",
+    "base",
+    "on-chain",
+    "training",
+    "cli"
+  ],
   "author": "anajuliabit",
   "license": "MIT",
   "dependencies": {
+    "commander": "^14.0.3",
+    "dotenv": "^17.2.3",
     "viem": "^2.45.1"
   },
   "devDependencies": {
+    "@types/node": "^25.2.0",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   },
