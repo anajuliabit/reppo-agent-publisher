@@ -1,4 +1,6 @@
-import type { Hash, Address, TransactionReceipt } from 'viem';
+import type { Hash, Address, TransactionReceipt, PublicClient, Transport, Chain } from 'viem';
+import type { WalletClient } from 'viem';
+import type { PrivateKeyAccount } from 'viem/accounts';
 
 export interface PrivySession {
   token: string;
@@ -50,11 +52,9 @@ export interface SubmitMetadataParams {
 }
 
 export interface Clients {
-  account: import('viem/accounts').PrivateKeyAccount;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  publicClient: any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  walletClient: any;
+  account: PrivateKeyAccount;
+  publicClient: PublicClient<Transport, Chain>;
+  walletClient: WalletClient<Transport, Chain, PrivateKeyAccount>;
 }
 
 export type KeyName = 'api_key' | 'moltbook_key' | 'private_key';

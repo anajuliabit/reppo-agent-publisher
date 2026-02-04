@@ -25,6 +25,9 @@
     "training",
     "cli"
   ],
+  "engines": {
+    "node": ">=18"
+  },
   "author": "anajuliabit",
   "license": "MIT",
   "dependencies": {

@@ -102,6 +102,14 @@ program
   });
 
 program
+  .command('balance')
+  .description('Show wallet balances (ETH, REPPO, USDC)')
+  .action(async () => {
+    const { cmdBalance } = await import('./commands/balance.js');
+    await cmdBalance();
+  });
+
+program
   .command('fee')
   .description('Check current publishing fee')
   .action(async () => {

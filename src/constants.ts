@@ -5,15 +5,15 @@ export const REPPO_API = 'https://reppo.ai/api/v1' as const;
 export const PRIVY_API = 'https://auth.privy.io' as const;
 export const PRIVY_APP_ID = 'cm6oljano016v9x3xsd1xw36p' as const;
 export const MOLTBOOK_API = 'https://moltbook.com/api' as const;
-export const DEFAULT_SUBMOLT = 'datatrading' as const;
+export const DEFAULT_SUBMOLT = process.env['REPPO_DEFAULT_SUBMOLT'] || 'datatrading';
 
 export const POD_CONTRACT: Address = '0xcfF0511089D0Fbe92E1788E4aFFF3E7930b3D47c';
 export const REPPO_TOKEN: Address = '0xFf8104251E7761163faC3211eF5583FB3F8583d6';
 export const CHAIN_ID = 8453 as const; // Base
-export const EMISSION_SHARE = 50 as const;
+export const EMISSION_SHARE = Number(process.env['REPPO_EMISSION_SHARE'] || 50);
 
-export const TX_RECEIPT_TIMEOUT = 120_000; // 2 minutes
-export const MAX_RETRIES = 3;
+export const TX_RECEIPT_TIMEOUT = Number(process.env['REPPO_TX_TIMEOUT'] || 120_000); // 2 minutes
+export const MAX_RETRIES = Number(process.env['REPPO_MAX_RETRIES'] || 3);
 export const RETRY_BASE_DELAY = 1000; // 1 second
 
 export const POD_ABI = parseAbi([
