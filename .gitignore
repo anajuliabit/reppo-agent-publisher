@@ -1,0 +1,11 @@
+node_modules/
+dist/
+
+# Secrets - never commit these
+.env
+*.key
+private_key
+
+# Config with secrets
+.config/
+privy_session.json
